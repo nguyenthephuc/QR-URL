@@ -1,0 +1,12 @@
+#Youtoo{
+    cursor: -webkit-grabbing;
+    width:360px;
+    height:210px;
+    background-image:url(/img/bg.jpg);
+    z-index:9000000000;
+    position:fixed;
+    top:30%;
+    left:35%;
+    border-radius:2px;
+    padding: 25px 0px 0px 0px;
+}
