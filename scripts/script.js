@@ -31,7 +31,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     var div = document.createElement('div');
     div.id = "Youtoo";
     var content = "<style>#Youtoo{cursor: -webkit-grabbing;width:360px;height:210px;background-image:url("+chrome.extension.getURL('img/bg.jpg')+");z-index:1000;position:fixed;top:30%;left:35%;border-radius:2px;padding:25px 0 0}</style>"
-    content += '<iframe width="360" height="215" src="https://www.youtube.com/embed/'+message+'" frameborder="0"></iframe>';
+    content += '<iframe width="360" height="215" src="https://www.youtube.com/embed/'+message+'?autoplay=1" allowfullscreen frameborder="0"></iframe>';
     div.innerHTML = content;
     document.body.appendChild(div);
 

@@ -73,7 +73,7 @@ _app.controller('youtooController', ['$scope', '$http', function ($scope, $http)
                 });
             });
         } else {
-            newWindow('https://www.youtube.com/embed/'+id, 360, 215);
+            newWindow('https://www.youtube.com/embed/'+id+'?autoplay=1', 360, 215);
         }
 
         /*chrome.tabs.executeScript(null, {
