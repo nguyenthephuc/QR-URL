@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/bootstrap.min.css" >
+        <!-- <link rel="stylesheet" href="/css/bootstrap-material-design.css" > -->
+        <link rel="stylesheet" href="/css/style.css" >
+        <script src="/scripts/angular.min.js"></script>
+        <script src="/scripts/jquery.js"></script>
+        <script src="/scripts/handle.js"></script>
+        <script src="/scripts/bootstrap.min.js"></script>
+    </head>
+    <body ng-app="app" ng-controller="youtooController">
+        <div class="container">
+            <div class="row">
+                <div class="open_with">
+                    <a class="guide" href="" ng-click="show_guide()">Guide line&#8230;</a>
+                    <div ng-if="is_show_guide" class="alert alert-info">
+                        <strong>Copy right &copy;</strong> The Phuc <br>
+                        <strong>Since</strong> 12/03/2017 <br><br>
+                        <span>&bull; Để coi ở chế độ của sổ trong trang hiện tại chọn open with <strong>Picture in picture</strong></span><br>
+                        <span>&bull; Để coi ở chế độ của sổ mới chọn open with <strong>New window</strong></span><br>
+                        <span>&bull; Nếu bạn mở bằng chế độ <strong>Picture in picture</strong> để đóng cửa sổ bạn nhấn chuột trái 2 lần trên thanh top của video</span>
+                    </div>
+                    <div class="well well-sm">
+                        Open with:&nbsp;&nbsp;
+                        <label><input type="radio" name="open_with" ng-model="open_with" value="1">&nbsp;Picture in picture</label>&nbsp;&nbsp;
+                        <label><input type="radio" name="open_with" ng-model="open_with" value="2">&nbsp;New window</label>
+                    </div>
+                </div>
+                <form novalidate role="form" autocomplete="off" ng-submit="submit()">
+                    <input type="text" placeholder="tìm kiếm..." ng-model="keyword" class="form-control search-input" autofocus>
+                </form>
+                <center class="loading" ng-if="is_loading"><i>đang tìm kiếm...</i></center>
+                <div ng-if="result_search && !is_error" ng-repeat="(key, value) in result_search" class="box-video">
+                    <div class="well">
+                        <img ng-click="open(value.id.videoId)" class="img-thumbnail" ng-src="{{value.snippet.thumbnails.default.url}}" alt="{{value.snippet.title}}">
+                        <div class="caption">
+                            <span>{{value.snippet.title}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="data && !is_error" ng-repeat="(key, value) in data" class="box-video">
+                    <div class="well">
+                        <img class="img-thumbnail" ng-src="{{value.snippet.thumbnails.default.url}}" alt="{{value.snippet.title}}">
+                        <div class="caption">
+                            <span>{{value.snippet.title}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="is_error" class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <strong>Error!</strong> {{error_message}}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+#Youtoo {
+    width: 360px;
+    height: 220px;
+    /* background: #f39c12; */
+    background-image: url(http://media.istockphoto.com/photos/gray-background-picture-id497897366?k=6&m=497897366&s=170667a&w=0&h=I7bLTr6dQ6513s07xiYSOtqwnXTEOxg5J9ze-zfyEpI=);
+    z-index: 1000;
+    position: fixed;
+    top: 30%;
+    left: 35%;
+    border-radius: 2px;
+    padding: 25px 0px 0px 0px;
+}
