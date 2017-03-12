@@ -19,18 +19,16 @@
     ],
     "web_accessible_resources": [
         "css/jquery-ui.min.css",
-        "css/iframe.css",
         "scripts/jquery.js",
         "scripts/jquery-ui.min.js",
         "img/icon.png",
-        "html/iframe.html"
+        "img/bg.jpg"
     ],
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
             "css": [
-                "css/jquery-ui.min.css",
-                "css/iframe.css"
+                "css/jquery-ui.min.css"
             ],
             "js": [
                 "scripts/jquery.js",
