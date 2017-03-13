@@ -1,10 +1,12 @@
 "use strict";
 
 function loadScript() {
-    var s = document.createElement("script");
-    s.type = "text/javascript";
-    s.src = chrome.extension.getURL('scripts/jquery.js');
-    document.head.appendChild(s);
+    if(typeof jQuery === undefined) {
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.src = chrome.extension.getURL('scripts/jquery.js');
+        document.head.appendChild(s);
+    }
 
     var css = document.createElement("link");
     css.type = "text/css";
