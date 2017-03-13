@@ -36,13 +36,15 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 
     var div = document.createElement('div');
     div.id = "Youtoo";
-    var content = '<iframe width="360" height="215" src="https://www.youtube.com/embed/'+message+'?autoplay=1" allowfullscreen frameborder="0"></iframe>';
+    div.className = "modal-Youtoo";
+    var content = "<span class=\"close\" id=\"close-Youtoo\">&times;</span>";
+    content += '<iframe width="360" height="215" src="https://www.youtube.com/embed/'+message+'?autoplay=1" allowfullscreen frameborder="0"></iframe>';
     div.innerHTML = content;
     document.body.appendChild(div);
 
     $( "#Youtoo" ).draggable();
 
-    document.getElementById("Youtoo").addEventListener("dblclick", function() {
+    document.getElementById("close-Youtoo").addEventListener("click", function() {
         var $myDiv = $("#Youtoo");
         if($myDiv.closest("html").length)
             $myDiv.remove();

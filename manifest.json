@@ -3,7 +3,7 @@
     "version": "1.0",
     "manifest_version": 2,
     "content_security_policy": "script-src 'self'; object-src 'self'",
-    "description": "Extension hỗ trợ việc coi video youtube với hai chế độ là `picture in picture` và new `window`",
+    "description": "Extension hỗ trợ việc coi video youtube với hai chế độ là `picture in picture` và `new window`",
     "browser_action": {
        "default_icon": "img/icon.png",
        "default_title": "Youtoo",
@@ -23,7 +23,7 @@
         "scripts/jquery.js",
         "scripts/jquery-ui.min.js",
         "img/icon.png",
-        "img/bg.jpg"
+        "img/bg.png"
     ],
     "content_scripts": [
         {
