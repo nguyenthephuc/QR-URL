@@ -6,7 +6,7 @@ _app.config(function($httpProvider) {
 });
 
 _app.controller('youtooController', ['$scope', function ($scope) {
-    var API = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=";
+    var API = "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=";
 
     function response(e) {
        var urlCreator = window.URL || window.webkitURL;
