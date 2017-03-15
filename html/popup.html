@@ -6,43 +6,14 @@
         <link rel="stylesheet" href="/css/bootstrap-material-design.css" >
         <link rel="stylesheet" href="/css/style.css" >
         <script src="/scripts/angular.min.js"></script>
-        <script src="/scripts/jquery.js"></script>
         <script src="/scripts/handle.js"></script>
-        <script src="/scripts/bootstrap.min.js"></script>
     </head>
     <body ng-app="app" ng-controller="youtooController">
         <div class="container">
             <div class="row">
-                <div class="open_with">
-                    <a class="guide" href="" ng-click="show_guide()">About&#8230;</a>
-                    <div ng-if="is_show_guide" class="alert alert-info">
-                        <strong>Copy right &copy;</strong> The Phuc <br>
-                        <strong>Since</strong> 12/03/2017 <br><br>
-                        <span>&bull; Để coi ở chế độ cửa sổ trong trang hiện tại chọn open with <strong>Picture in picture</strong></span><br>
-                        <span>&bull; Để coi ở chế độ cửa sổ mới chọn open with <strong>New window</strong></span><br>
-                    </div>
-                    <div class="radio_open">
-                        Open with:&nbsp;&nbsp;
-                        <label><input type="radio" name="open_with" ng-model="open_with" value="1">&nbsp;Picture in picture</label>&nbsp;&nbsp;
-                        <label><input type="radio" name="open_with" ng-model="open_with" value="2">&nbsp;New window</label>
-                    </div>
-                </div>
-                <form novalidate role="form" autocomplete="off" ng-submit="submit()">
-                    <input type="text" placeholder="tìm kiếm..." ng-model="keyword" class="input" autofocus>
-                </form>
-                <center class="loading" ng-if="is_loading"><i>đang tìm kiếm...</i></center>
-                <div ng-if="is_error" class="alert alert-danger">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <strong>Error!</strong> {{error_message}}
-                </div>
-                <div ng-if="result_search && !is_error" ng-repeat="(key, value) in result_search" class="box-video">
-                    <div class="well">
-                        <img ng-click="open(value.id.videoId)" class="img-thumbnail" ng-src="{{value.snippet.thumbnails.default.url}}" alt="{{value.snippet.title}}">
-                        <div class="caption">
-                            <span>{{value.snippet.title}}</span>
-                        </div>
-                    </div>
-                </div>
+                <center>
+                    <img src="/img/loading.gif" id="QR-IMAGE" class="img-responsive" alt="Image">
+                </center>
             </div>
         </div>
     </body>
