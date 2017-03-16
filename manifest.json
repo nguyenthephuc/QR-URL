@@ -9,6 +9,9 @@
        "default_title": "Fast generate URL-QR",
        "default_popup":"html/popup.html"
     },
+    "icons": {
+        "48": "img/icon.png"
+    },
     "permissions": [
         "tabs",
         "activeTab",
